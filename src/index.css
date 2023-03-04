@@ -1,0 +1,444 @@
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+
+body {
+  margin: 0;
+  font-family: "SF Pro Display", SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000;
+  color: #f5f5f7;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+  background-color: #aaaaaa;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}
+
+.App #content {
+  transition-duration: 0.3s;
+}
+
+#webgi-canvas {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+#webgi-canvas-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  pointer-events: none;
+  min-height: 831px;
+  background: transparent;
+}
+
+#webgi-canvas-container .button {
+  background: #0071e3;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 17px;
+  font-weight: 400;
+  min-width: 28px;
+  padding: 8px 16px;
+  border-radius: 980px;
+  position: absolute;
+  top: 30px;
+  border: none;
+  z-index: 1;
+  transition-duration: 0.3s;
+}
+
+.display-section.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 980px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0 400px 0;
+  height: 100vh;
+  box-sizing: border-box;
+  opacity: 0;
+  position: relative;
+}
+
+.display-section .title {
+  color: #86868b;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  margin-bottom: 0;
+}
+
+.display-section .text {
+  display: inline-block;
+  color: transparent;
+  background-image: linear-gradient(180deg, #ffb6ff, #b344ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding-top: 0.5px;
+  margin-top: 16px;
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.display-section .description {
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.display-section .button {
+  background: #0071e3;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 17px;
+  font-weight: 400;
+  min-width: 28px;
+  padding: 8px 16px;
+  border-radius: 980px;
+  margin: 15px;
+}
+
+.display-section .back-button {
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 30px;
+  font-size: 0.6rem;
+  cursor: pointer;
+  transition: all 0.8s ease;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+nav.nav-wrapper {
+  margin: 0;
+  width: 100%;
+  min-width: 320px;
+  height: 48px;
+  max-height: 44px;
+  font-size: 17px;
+  background-color: #f2f2f2;
+}
+
+nav .nav-content {
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 22px;
+}
+
+nav .list-styled {
+  cursor: default;
+  margin: 0 -9px;
+  width: auto;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+nav .link-styled {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  color: #000000cc;
+}
+
+.jumbotron-section.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 980px;
+  width: 100%;
+  box-sizing: border-box;
+  height: calc(100vh - 40px);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 60px;
+  position: relative;
+  z-index: 1;
+  min-height: 831px;
+}
+
+.jumbotron-section .title {
+  color: #86868b;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+}
+
+.jumbotron-section .logo {
+  width: 140px;
+}
+
+.jumbotron-section .text {
+  display: inline-block;
+  color: transparent;
+  background-image: linear-gradient(180deg, #ffb6ff, #b344ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding-top: 0.5px;
+  margin-top: 16px;
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.jumbotron-section .description {
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.jumbotron-section .links {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  align-items: center;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.jumbotron-section .button {
+  background: #0071e3;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 17px;
+  font-weight: 400;
+  min-width: 28px;
+  padding: 8px 16px;
+  border-radius: 980px;
+  margin: 0 14px;
+}
+
+.jumbotron-section .link {
+  text-decoration: none;
+  color: #2997ff;
+  font-size: 21px;
+  font-weight: 400;
+  margin: 0 14px;
+  cursor: pointer;
+}
+
+.jumbotron-section .iphone-img {
+  margin-right: -400px;
+  height: 516px;
+  position: absolute;
+  bottom: 0;
+}
+
+.mobile-or-tablet .iphone-img {
+  display: none;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.loader {
+  position: fixed;
+  z-index: 2;
+  background-color: white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: fadeOut;
+  animation-duration: 0.3s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+  pointer-events: none;
+}
+
+.loader .logo {
+  max-width: 400px;
+  max-height: 300px;
+  width: 100%;
+  height: 100%;
+}
+
+.sound-section.wrapper {
+  width: 100%;
+  color: #1d1d1f;
+  background-color: #fbfbfd;
+  height: 100vh;
+}
+
+.sound-section .body {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.sound-section .content {
+  max-width: 490px;
+  width: 100%;
+  padding: 200px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+}
+
+.sound-section .title {
+  color: #1d1d1f;
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.sound-section .text {
+  display: inline-block;
+  color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    #1e3791 0%,
+    #2948b1 40%,
+    #3153c6 55%,
+    #385fda 60%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding-top: 0.5px;
+  margin-top: 16px;
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.sound-section .description {
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.sound-section .links {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  align-items: center;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.sound-section .button {
+  background: #0071e3;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 17px;
+  font-weight: 400;
+  min-width: 28px;
+  padding: 8px 16px;
+  border-radius: 980px;
+  margin: 0 14px;
+  border: none;
+}
+
+.sound-section .link {
+  text-decoration: none;
+  color: #2997ff;
+  font-size: 21px;
+  font-weight: 400;
+  margin: 0 14px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 990px) {
+  .jumbotron-section .iphone-img,
+  nav .link-styled {
+    display: none;
+  }
+
+  nav .list-styled {
+    padding-left: 0;
+  }
+
+  .jumbotron-section.wrapper,
+  .sound-section.wrapper,
+  .display-section.wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  .jumbotron-section .description,
+  .sound-section .description,
+  .display-section .description {
+    font-size: 14px;
+  }
+
+  .jumbotron-section.wrapper,
+  .sound-section .content,
+  .display-section.wrapper {
+    padding-top: 20px;
+  }
+
+  #webgi-canvas-container,
+  .jumbotron-section.wrapper {
+    min-height: 746px;
+    height: 100vh;
+  }
+
+  .sound-section.wrapper {
+    height: 100vh;
+  }
+
+  .sound-section .content {
+    max-width: 100%;
+  }
+}
