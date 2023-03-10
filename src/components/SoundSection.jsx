@@ -4,11 +4,12 @@ function SoundSection() {
   const handleLearnMore = () => {
     const element = document.querySelector(".display-section");
     window.scrollTo({
-        top: element?.getBoundingClientRect().top,
+        top: element?.getBoundingClientRect().bottom,
         left: 0,
         behavior:'smooth'
       })
     }
+
   return (
     <div className="sound-section wrapper">
       <div className="body">

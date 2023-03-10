@@ -3,9 +3,8 @@ import React from "react";
 function DisplaySection() {
 
     const handleTop = () => {
-        const element = document.querySelector(".jumbotron-section");
         window.scrollTo({
-            top: element?.getBoundingClientRect().top,
+            top: 0,
             left: 0,
             behavior:'smooth'
           })
