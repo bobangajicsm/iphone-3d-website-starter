@@ -136,7 +136,7 @@ body::-webkit-scrollbar-thumb {
   border: none;
   border-radius: 50px;
   padding: 10px 30px;
-  font-size: 0.6rem;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.8s ease;
   position: fixed;
@@ -296,8 +296,8 @@ nav .link-styled {
   justify-content: center;
   align-items: center;
   animation-name: fadeOut;
-  animation-duration: 0.3s;
-  animation-delay: 3s;
+  animation-duration: 0.6s;
+  animation-delay: 6s;
   animation-fill-mode: forwards;
   pointer-events: none;
 }
