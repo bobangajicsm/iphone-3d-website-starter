@@ -8,9 +8,9 @@ function Jumbotron() {
     window.scrollTo({
       top: element?.getBoundingClientRect().top,
       left: 0,
-      behavior:'smooth'
-    })
-  }
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div className="jumbotron-section wrapper">
@@ -25,10 +25,12 @@ function Jumbotron() {
           <button className="button">Buy</button>
         </li>
         <li>
-          <a className="link" onClick={handleLearnMore} >Learn more.</a>
+          <a className="link" onClick={handleLearnMore}>
+            Learn more.
+          </a>
         </li>
       </ul>
-      <img className="iphone-img" src={HoldingIphone} alt="Iphone-14"/>
+      <img className="iphone-img" src={HoldingIphone} alt="Iphone-14" />
     </div>
   );
 }
