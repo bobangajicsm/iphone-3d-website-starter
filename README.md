@@ -22,13 +22,13 @@ To run this project locally, you need to have VS Code and node installed. Here a
 
 ## ⭐ Screenshots
 
-<p align="center">
+
 ![image](https://user-images.githubusercontent.com/89534087/224548764-faae890c-5b39-4aaf-a513-e73783ec0f2a.png)
 ![image](https://user-images.githubusercontent.com/89534087/224548772-320eaff8-e311-44a5-a35d-ad30b93493b2.png)
 ![image](https://user-images.githubusercontent.com/89534087/224548790-9faa263c-3345-45ff-b352-2c4dbd3a0d6a.png)
 ![image](https://user-images.githubusercontent.com/89534087/224548802-15308f25-f80e-4c8c-9ca4-0a0a5c376317.png)
 
-</p>
+
 
 
 ## ⭐ License
