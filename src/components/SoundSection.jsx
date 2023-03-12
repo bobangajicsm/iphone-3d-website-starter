@@ -23,7 +23,7 @@ function SoundSection() {
               <button className="button">Buy</button>
             </li>
             <li>
-              <a onClick={handleLearnMore} className="link">
+              <a className="link" onClick={handleLearnMore}>
                 Learn more.
               </a>
             </li>
