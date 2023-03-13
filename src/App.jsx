@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
 import Sound from "./components/Sound";
+import Display from "./components/Display";
 
 // global main
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Navbar />
       <Jumbotron />
       <Sound />
+      <Display />
     </div>
   );
 }
