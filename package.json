@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "git-update": "git fetch && git pull",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
@@ -22,7 +23,7 @@
     "postcss-normalize": "^10.0.1",
     "postcss-preset-env": "^8.0.1",
     "web-vitals": "^2.1.4",
-  "webgi": "https://storage.googleapis.com/dist.pixotronics.com/webgi/runtime/bundle-0.5.8.tgz"
+    "webgi": "https://storage.googleapis.com/dist.pixotronics.com/webgi/runtime/bundle-0.5.8.tgz"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
