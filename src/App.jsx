@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
 import Sound from "./components/Sound";
 import Display from "./components/Display";
+import Webgi from "./components/Webgi";
 
 // global main
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Jumbotron />
       <Sound />
       <Display />
+      <Webgi />
     </div>
   );
 }
