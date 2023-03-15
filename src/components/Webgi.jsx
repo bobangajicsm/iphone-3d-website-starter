@@ -8,6 +8,7 @@ import {
 } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { scrollAnimation } from "../lib/scroll-animation";
 import {
   AssetManagerPlugin,
   BloomPlugin,
@@ -25,6 +26,12 @@ gsap.registerPlugin(ScrollTrigger);
 // WebGi viewer
 const Webgi = () => {
   const canvasRef = useRef(null);
+
+  const memoizedScrollAnimation = useCallback((position, target, onUpdate) => {
+    if (position && target && onUpdate) {
+      scrollAnimation(position, target, onUpdate);
+    }
+  }, []);
 
   const setupViewer = useCallback(async () => {
     // Initialize the viewer
@@ -58,12 +65,18 @@ const Webgi = () => {
 
     let needsUpdate = true;
 
+    const onUpdate = () => {
+      needsUpdate = true;
+      viewer.setDirty();
+    };
+
     viewer.addEventListener("preFrame", () => {
       if (needsUpdate) {
         camera.positionTargetUpdated(true);
         needsUpdate = false;
       }
     });
+    memoizedScrollAnimation(position, target, onUpdate);
   }, []);
 
   useEffect(() => {
