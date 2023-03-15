@@ -85,7 +85,7 @@ body::-webkit-scrollbar-thumb {
   padding: 50px 0 400px 0;
   height: 100vh;
   box-sizing: border-box;
-  /* opacity: 0; */
+  opacity: 0;
   position: relative;
 }
 
