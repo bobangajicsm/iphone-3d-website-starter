@@ -20,6 +20,8 @@ import {
   ViewerApp,
 } from "webgi";
 
+gsap.registerPlugin(ScrollTrigger);
+
 // WebGi viewer
 const Webgi = () => {
   const canvasRef = useRef(null);
