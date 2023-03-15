@@ -14,6 +14,7 @@ import {
   BloomPlugin,
   GBufferPlugin,
   GammaCorrectionPlugin,
+  mobileAndTabletCheck,
   ProgressivePlugin,
   SSAOPlugin,
   SSRPlugin,
@@ -26,6 +27,7 @@ gsap.registerPlugin(ScrollTrigger);
 // WebGi viewer
 const Webgi = forwardRef((props, ref) => {
   const [cameraRef, setCameraRef] = useState(null);
+  const [isMobile, setIsMobile] = useState(null);
   const [positionRef, setPositionRef] = useState(null);
   const [previewMode, setPreviewMode] = useState(false);
   const [targetRef, setTargetRefRef] = useState(null);
@@ -67,6 +69,8 @@ const Webgi = forwardRef((props, ref) => {
     });
 
     setupViewerRef(viewer);
+    const isMobileOrTablet = mobileAndTabletCheck();
+    setIsMobile(isMobileOrTablet);
 
     // Add some plugins
     const manager = await viewer.addPlugin(AssetManagerPlugin);
@@ -94,6 +98,13 @@ const Webgi = forwardRef((props, ref) => {
 
     viewer.getPlugin(TonemapPlugin).config.clipBackground = true;
     viewer.scene.activeCamera.setCameraOptions({ controlsEnabled: false });
+
+    if (isMobileOrTablet) {
+      position.set(-16.7, 1.17, 11.7);
+      target.set(0, 1.37, 0);
+      props.contentRef.current.className = "mobile-or-tablet";
+    }
+
     window.scrollTo(0, 0);
 
     let needsUpdate = true;
