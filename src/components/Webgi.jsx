@@ -56,11 +56,14 @@ const Webgi = forwardRef((props, ref) => {
     },
   }));
 
-  const memoizedScrollAnimation = useCallback((position, target, onUpdate) => {
-    if (position && target && onUpdate) {
-      scrollAnimation(position, target, onUpdate);
-    }
-  }, []);
+  const memoizedScrollAnimation = useCallback(
+    (position, target, isMobile, onUpdate) => {
+      if (position && target && onUpdate) {
+        scrollAnimation(position, target, isMobile, onUpdate);
+      }
+    },
+    []
+  );
 
   const setupViewer = useCallback(async () => {
     // Initialize the viewer
@@ -120,7 +123,7 @@ const Webgi = forwardRef((props, ref) => {
         needsUpdate = false;
       }
     });
-    memoizedScrollAnimation(position, target, onUpdate);
+    memoizedScrollAnimation(position, target, isMobileOrTablet, onUpdate);
   }, []);
 
   useEffect(() => {
