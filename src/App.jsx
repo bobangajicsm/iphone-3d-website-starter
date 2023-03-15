@@ -1,7 +1,8 @@
-import Navbar from "./components/Navbar";
-import Jumbotron from "./components/Jumbotron";
-import Sound from "./components/Sound";
 import Display from "./components/Display";
+import Jumbotron from "./components/Jumbotron";
+import Loader from "./components/Loader";
+import Navbar from "./components/Navbar";
+import Sound from "./components/Sound";
 import Webgi from "./components/Webgi";
 import { useRef } from "react";
 
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <div className="App">
+      <Loader />
       <div ref={contentRef} id="content">
         <Navbar />
         <Jumbotron />
