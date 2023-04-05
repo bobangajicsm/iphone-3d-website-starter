@@ -1,5 +1,9 @@
 @import url("https://fonts.cdnfonts.com/css/sf-pro-display");
 
+*, html {
+  scroll-behavior: smooth !important;
+}
+
 body {
   margin: 0;
   font-family: "SF Pro Display", SF Pro Icons, Helvetica Neue, Helvetica, Arial,
