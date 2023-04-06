@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../assets/images/logo.svg";
-import Search from '../assets/images/search.svg'
-import Store from '../assets/images/store.svg'
+import Search from "../assets/images/search.svg";
+import Store from "../assets/images/store.svg";
 
 function Nav() {
   return (
