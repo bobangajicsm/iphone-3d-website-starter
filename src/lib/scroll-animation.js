@@ -16,16 +16,36 @@ export const scrollAnimation = (position, target, onUpdate) => {
     },
     onUpdate,
   })
-  .to(target, {
-    x: 1.52,
-    y: 0.77,
-    z: -1.08,
-    scrollTrigger: {
-      trigger: ".sound-section",
-      start: "top bottom",
-      end: "top top",
-      scrub: 2,
-      immediateRender: false,
-    },
-  });
+    .to(target, {
+      x: 1.52,
+      y: 0.77,
+      z: -1.08,
+      scrollTrigger: {
+        trigger: ".sound-section",
+        start: "top bottom",
+        end: "top top",
+        scrub: 2,
+        immediateRender: false,
+      },
+    })
+    .to(".jumbotron-section", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".sound-section",
+        start: "top bottom",
+        end: "top top",
+        scrub: 2,
+        immediateRender: false,
+      },
+    })
+    .to(".sound-section-content", {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".sound-section",
+        start: "top bottom",
+        end: "top top",
+        scrub: 2,
+        immediateRender: false,
+      },
+    });
 };
